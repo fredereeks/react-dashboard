@@ -3,16 +3,18 @@ import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import { Header, SideBar, Footer } from "./components";
 
 import Admin from "./pages/Admin";
+import AdminDetails from "./pages/AdminDetails";
 import Blog from "./pages/Blog";
 import Home from "./pages/Home";
 import Hotel from "./pages/Hotel";
 import Message from "./pages/Message";
 import Profile from "./pages/Profile";
 import User from "./pages/User";
+import UserDetails from "./pages/UserDetails";
 
 const Layout = () => {
   const [navShow, setNavShow] = React.useState(false)
-  const [darkMode, setDarkMode] = React.useState(localStorage.getItem("travlox__darkmode") || false)
+  const [darkMode, setDarkMode] = React.useState(localStorage.getItem("travlox__darkmode") || 'false')
 
   React.useEffect(() => {
     localStorage.setItem("travlox__darkmode", darkMode)
@@ -23,7 +25,7 @@ const Layout = () => {
   }
 
   return (
-    <main className={`${darkMode ? 'dark' : 'light'}`}>
+    <main className={`${darkMode === true ? 'dark' : 'light'}`}>
       <section className={`bg-slate-50 dark:bg-slate-900 min-h-screen flex py-2 gap-3 w-full`}>
         <SideBar navShow={navShow} />
         <div className="flex flex-col flex-1 py-4 sm:px-4 w-[50vw]">
@@ -54,6 +56,10 @@ function App() {
           element: <Admin />
         },
         {
+          path: "/dashboard/admin/:id",
+          element: <AdminDetails />
+        },
+        {
           path: "/dashboard/blogs",
           element: <Blog />
         },
@@ -68,6 +74,10 @@ function App() {
         {
           path: "/dashboard/profile",
           element: <Profile />
+        },
+        {
+          path: "/dashboard/user/:id",
+          element: <UserDetails />
         },
         {
           path: "/dashboard/users",

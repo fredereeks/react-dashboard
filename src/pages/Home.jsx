@@ -28,9 +28,9 @@ export default function Home() {
             {/* <section className="flex flex-1 w-full mx-auto max-w-[95%] z-50 pt-5 pb-10 bg-white dark:bg-[#fcfcfc] h-auto rounded-lg shadow-xl"> */}
             <section className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 auto-rows-auto px-2">
                 <div className="md:col-span-2 w-full grid gap-4 shadow-lg shadow-slate-200 dark:shadow-gray-900 rounded-lg py-2 px-2 bg-white dark:bg-slate-300 ">
-                    <div className="flex justify-between items-center gap-1 px-4 text-slate-700 border-b border-b-slate-400/50 dark:border-b-slate-500/40">
+                    <div className="flex justify-between items-center gap-1 px-4 text-slate-700 border-b border-b-slate-400/50 dark:border-b-slate-500/40 flex-wrap">
                         <h2 className="py-2 font-semibold text-lg sm:text-xl">Posts</h2>
-                        <Link to="/dashboard/blogs" className="dark-text flex items-center">
+                        <Link to="/dashboard/blogs" className="dark-text flex items-center p-4">
                             <p className="text-xs opacity-80 dark:opacity-100">See All</p>
                             <IoChevronForward className='text-inherit scale-75 opacity-70' />
                         </Link>
@@ -104,9 +104,9 @@ export default function Home() {
                     </div>
                 </div>
                 <div className="w-full grid shadow-lg shadow-slate-200 dark:shadow-gray-900 rounded-lg py-2 px-2 bg-white dark:bg-slate-300">
-                    <div className="flex justify-between items-center gap-1 px-4 text-slate-700 border-b border-b-slate-400/50 dark:border-b-slate-500/40">
+                    <div className="flex justify-between items-center gap-1 px-4 text-slate-700 border-b border-b-slate-400/50 dark:border-b-slate-500/40 flex-wrap">
                         <h2 className="py-2 font-semibold text-lg sm:text-xl">Users</h2>
-                        <Link to="/dashboard/users" className="dark-text flex items-center">
+                        <Link to="/dashboard/users" className="dark-text flex items-center p-4">
                             <p className="text-xs opacity-80 dark:opacity-100">See All</p>
                             <IoChevronForward className='text-inherit scale-75 opacity-70' />
                         </Link>
@@ -121,7 +121,7 @@ export default function Home() {
                                 <div className="flex gap-2 items-center font-thin">
                                     <h3 className="text-[.85rem] font-light leading-tight">perrozumar@gmail.com</h3>
                                     <IoArrowForwardOutline className="text-gray-500 text-xs font-thin opacity-50" />
-                                    <p className="text-[.7rem] opacity-50 font-medium text-justify">2023-09-25</p>
+                                    <p className="text-[.7rem] opacity-50 font-medium text-justify whitespace-pre-wrap">2023-09-25</p>
                                 </div>
                             </div>
                         </aside>
@@ -134,7 +134,7 @@ export default function Home() {
                                 <div className="flex gap-2 items-center font-thin">
                                     <h3 className="text-[.85rem] font-light leading-tight">freshanton@gmail.com</h3>
                                     <IoArrowForwardOutline className="text-gray-500 text-xs font-thin opacity-50" />
-                                    <p className="text-[.7rem] opacity-50 font-medium text-justify">2023-08-12</p>
+                                    <p className="text-[.7rem] opacity-50 font-medium text-justify whitespace-pre-wrap">2023-08-12</p>
                                 </div>
                             </div>
                         </aside>
@@ -147,7 +147,7 @@ export default function Home() {
                                 <div className="flex gap-2 items-center font-thin">
                                     <h3 className="text-[.85rem] font-light leading-tight">ogunsomben@gmail.com</h3>
                                     <IoArrowForwardOutline className="text-gray-500 text-xs font-thin opacity-50" />
-                                    <p className="text-[.7rem] opacity-50 font-medium text-justify">2023-08-01</p>
+                                    <p className="text-[.7rem] opacity-50 font-medium text-justify whitespace-pre-wrap">2023-08-01</p>
                                 </div>
                             </div>
                         </aside>
@@ -155,35 +155,35 @@ export default function Home() {
                 </div>
             </section>
             <section className="w-full flex flex-col gap-3 sm:gap-4 auto-rows-auto py-5 px-2">
-                <div className="flex justify-between items-center gap-1">
+                <div className="flex justify-between items-center gap-1 flex-wrap">
                     <div className="flex items-center gap-2 sm:gap-4 px-2 sm:px-4">
                         <button className="py-2 border-b sm:border-b-2 border-b-cyan-400 darker-text text-xs sm:text-sm cursor-pointer px-1 hover:border-b-cyan-400">Most Popular</button>
                         <button className="py-2 border-b sm:border-b-2 border-b-transparent darker-text text-xs sm:text-sm cursor-pointer px-1 hover:border-b-cyan-400">Best Price</button>
                         <button className="py-2 border-b sm:border-b-2 border-b-transparent darker-text text-xs sm:text-sm cursor-pointer px-1 hover:border-b-cyan-400">Near Me</button>
                     </div>
-                    <Link to="/dashboard/hotels" className="dark-text flex items-center">
+                    <Link to="/dashboard/hotels" className="dark-text flex items-center p-4">
                         <p className="text-xs opacity-80">See All</p>
                         <IoChevronForward className='text-inherit scale-75 opacity-70' />
                     </Link>
                 </div>
-                <div className="w-full grid grid-cols-1 sm:grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-3 sm:gap-4 auto-rows-auto py-5 px-2">
+                <div className="w-full grid grid-cols-2 sm:grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-3 sm:gap-4 auto-rows-auto py-5 px-2">
                 {
                     hotels.map(({ id, name, image, lowest, location, country }, i) => (
-                        <Link to={`/hotels/${id}`} key={id} className="flex flex-col gap-2 max-w-sm w-full dark:shadow-gray-900">
-                            <div className="h-[150px] sm:h-[250px] md:h-[300px] w-full relative overflow-hidden">
+                        <Link to={`/hotels/${id}`} key={id} className="flex flex-col sm:gap-2 max-w-sm w-full dark:shadow-gray-900">
+                            <div className="h-[100px] sm:h-[250px] md:h-[300px] w-full relative overflow-hidden">
                                 <img className="object-cover transition-all group-hover:scale-100 scale-150" alt={name} src={`${image}`} />
                             </div>
                             <div className="flex flex-col pt-2 pb-4 gap-2">
-                                <div className="flex flex-col sm:flex-row justify-between items-center gap-2 text-pri">
+                                <div className="flex flex-col sm:flex-row justify-between sm:items-center sm:gap-2 text-pri">
                                     <p className="text-base text-gray-600 dark:text-gray-100 font-bold">{name}</p>
-                                    <p className="text-xs text-inherit font-thin"><span className="text-[.85rem] text-red-500 dark:text-slate-200 font-thin">&#8358;{lowest.toLocaleString()}</span></p>
+                                    <p className="text-xs text-inherit font-thin"><span className="text-[.65rem] sm:text-[.85rem] text-red-500 dark:text-slate-200 font-thin">&#8358;{lowest.toLocaleString()}</span></p>
                                 </div>
-                                <div className="flex items-center justify-between gap-2 text-gray-600 dark:text-gray-100">
+                                <div className="flex flex-row items-center justify-between gap-2 text-gray-600 dark:text-gray-100 scale-90">
                                     <div className="flex gap-1 items-center">
                                         <IoLocationOutline className="text-gray-500  dark:text-gray-100 text-sm opacity-80" />
                                         <p className="text-sm text-gray-600  dark:text-gray-300 font-bold">{location}, <span className="text-xs text-inherit font-thin opacity-90">{country}</span></p>
                                     </div>
-                                    <IoArrowForwardOutline className="text-gray-500 text-sm opacity-80" />
+                                    <IoArrowForwardOutline className="text-gray-500 text-xs sm:text-sm opacity-80" />
                                 </div>
                             </div>
                         </Link>

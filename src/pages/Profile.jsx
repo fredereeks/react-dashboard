@@ -49,32 +49,32 @@ export default function Home() {
             }
           </div>
           {/* <h3 className="py-4 text-lg sm:text-xl md:text-2xl darker-text font-bold text-center">Umar Peruzzi's Profile</h3> */}
-          <div className="grid grid-cols-2 gap-2 sm:gap-4 items-center w-full px-4 md:px-6 mx-auto">
+          <div className="grid sm:grid-cols-2 gap-2 sm:gap-4 items-center w-full px-4 md:px-6 mx-auto">
             <div className="flex flex-col gap-1 flex-1">
-              <label htmlFor='firstname' className="dark-text font-normal leading-none">First Name <span className="-mt-2 text-xs text-red-500 dark:text-red-300">*</span></label>
-              <input type="text" required id='firstname' defaultValue={'Umar'} className="bg-transparent outline-none darker-text py-2 px-3 rounded-md border border-slate-400/50" />
+              <label htmlFor='firstname' className="dark-text font-normal text-xs sm:text-sm leading-none">First Name <span className="-mt-2 text-xs text-red-500 dark:text-red-300">*</span></label>
+              <input type="text" required id='firstname' defaultValue={'Umar'} className="bg-transparent text-xs sm:text-sm outline-none darker-text py-1 sm:py-2 px-3 rounded-md border border-slate-400/50" />
             </div>
             <div className="flex flex-col gap-1 flex-1">
-              <label htmlFor='lastname' className="dark-text font-normal leading-none">Last Name <span className="-mt-2 text-xs text-red-500 dark:text-red-300">*</span></label>
-              <input type="text" required id='lastname' defaultValue={'Peruzzi'} className="bg-transparent outline-none darker-text py-2 px-3 rounded-md border border-slate-400/50" />
+              <label htmlFor='lastname' className="dark-text font-normal text-xs sm:text-sm leading-none">Last Name <span className="-mt-2 text-xs text-red-500 dark:text-red-300">*</span></label>
+              <input type="text" required id='lastname' defaultValue={'Peruzzi'} className="bg-transparent text-xs sm:text-sm outline-none darker-text py-1 sm:py-2 px-3 rounded-md border border-slate-400/50" />
             </div>
             <div className="flex flex-col gap-1 flex-1">
-              <label htmlFor='username' className="dark-text font-normal leading-none">Username <span className="-mt-2 text-xs text-red-500 dark:text-red-300">*</span></label>
-              <input type="text" required id='username' minLength={6} defaultValue={'perrozumar'} className="bg-transparent outline-none darker-text py-2 px-3 rounded-md border border-slate-400/50" />
+              <label htmlFor='username' className="dark-text font-normal text-xs sm:text-sm leading-none">Username <span className="-mt-2 text-xs text-red-500 dark:text-red-300">*</span></label>
+              <input type="text" required id='username' minLength={6} defaultValue={'perrozumar'} className="bg-transparent text-xs sm:text-sm outline-none darker-text py-1 sm:py-2 px-3 rounded-md border border-slate-400/50" />
             </div>
             <div className="flex flex-col gap-1 flex-1">
-              <label htmlFor='email' className="dark-text font-normal leading-none">Email <span className="-mt-2 text-xs text-red-500 dark:text-red-300">*</span></label>
-              <input type="email" required id='email' defaultValue={'perrozumar@gmail.com'} className="bg-transparent outline-none darker-text py-2 px-3 rounded-md border border-slate-400/50" />
+              <label htmlFor='email' className="dark-text font-normal text-xs sm:text-sm leading-none">Email <span className="-mt-2 text-xs text-red-500 dark:text-red-300">*</span></label>
+              <input type="email" required id='email' defaultValue={'perrozumar@gmail.com'} className="bg-transparent text-xs sm:text-sm outline-none darker-text py-1 sm:py-2 px-3 rounded-md border border-slate-400/50" />
             </div>
             <div className="flex flex-col gap-1 flex-1">
-              <label htmlFor='password' className="dark-text font-normal leading-none">Password <span className="-mt-2 text-xs text-red-500 dark:text-red-300">(Leave empty to keep current password)</span></label>
-              <input type="password" required id='password' defaultValue={'Do NOT Pry!'} className="bg-transparent outline-none darker-text py-2 px-3 rounded-md border border-slate-400/50" />
+              <label htmlFor='password' className="dark-text font-normal text-xs sm:text-sm leading-none">Password <span className="-mt-2 text-xs text-red-500 dark:text-red-300">(Leave empty to keep current password)</span></label>
+              <input type="password" required id='password' defaultValue={'Do NOT Pry!'} className="bg-transparent text-xs sm:text-sm outline-none darker-text py-1 sm:py-2 px-3 rounded-md border border-slate-400/50" />
             </div>
             <div className="flex flex-col gap-1 flex-1">
-              <label htmlFor='verify-password' className="dark-text font-normal leading-none">Confirm Changes <span className="-mt-2 text-xs text-red-500 dark:text-red-300">(Enter your current password)</span></label>
-              <input type="password" required id='verify-password' placeholder={'Enter Currrent Password'} className="bg-transparent outline-none darker-text py-2 px-3 rounded-md border border-slate-400/50" />
+              <label htmlFor='verify-password' className="dark-text font-normal text-xs sm:text-sm leading-none">Confirm Changes <span className="-mt-2 text-xs text-red-500 dark:text-red-300">(Enter your current password)</span></label>
+              <input type="password" required id='verify-password' placeholder={'Enter Currrent Password'} className="bg-transparent text-xs sm:text-sm outline-none darker-text py-1 sm:py-2 px-3 rounded-md border border-slate-400/50" />
             </div>
-            <button type="submit" className="text-gray-50 bg-red-500 rounded-[2rem] w-max px-8 py-2 text-sm md:text-md shadow-lg cursor-pointer shadow-red-500">Save Changes</button>
+            <button type="submit" className="text-gray-50 bg-red-500 rounded-[2rem] w-max mt-2 px-4 sm:px-8 py-2 text-xs sm:text-sm shadow-lg cursor-pointer shadow-red-500">Save Changes</button>
           </div>
         </form>
       </section>

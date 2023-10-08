@@ -1,4 +1,4 @@
-import { flight_hotel2, flight_hotel3, flight_hotel4 } from "../assets/images";
+import { flight_hotel1, flight_hotel2, flight_hotel3, flight_hotel4 } from "../assets/images";
 
 export const hotels = [
     {
@@ -27,5 +27,14 @@ export const hotels = [
       country: 'United Kingdom',
       description: 'Enjoy the most exquisite luxury of serenity and sanctity of living with us at Brova Jones',
       lowest: 455000,
+    },
+    {
+        id: "82473",
+        name: 'Taremi Plain', 
+        image: flight_hotel1, 
+        location: 'Porto', 
+        country: 'Portugal', 
+        description: 'Enjoy the most exquisite luxury of serenity and sanctity of living with us at Taremi Plain', 
+        lowest: 393500,
     },
   ]

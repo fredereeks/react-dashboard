@@ -26,8 +26,8 @@ export default function Admin() {
             <tbody className='mx-3'>
               <tr className='align-center'>
                 <td className="pr-1 py-2 text-slate-700">
-                  <Link to={`/dashboard/user/${123859}`} className="pr-1 flex gap-1 items-center relative group">
-                    <ToolTip direction={'top-right'} text={"Click to see all admin's activities"} />
+                  <Link to={`/dashboard/admin/${123859}`} className="pr-1 flex gap-1 items-center relative group">
+                    <ToolTip direction={'top'} text={"Click to see all admin's activities"} />
                     <div className="h-9 w-9 rounded-md overflow-hidden relative bg-cyan-400 dark:bg-slate-600/50">
                       <img src={flight_children} alt={`Ademola Julius`} className="absolute left-0 top-0 object-cover w-full h-full" />
                     </div>

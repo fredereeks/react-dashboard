@@ -7,7 +7,7 @@ import ToolTip from './ToolTip';
 
 export default function Header({ handleClick, darkMode, toggleDarkMode }) {
     const location = useLocation();
-    const pathname = location.pathname === "/" ? "Dashboard" : location.pathname.replace("/dashboard/", "");
+    const pathname = location.pathname === "/" ? "Dashboard" : location.pathname.indexOf("/dashboard/user/") > -1 ? "User Details" : location.pathname.indexOf("/dashboard/admin/") > -1 ? "Admin Details" :  location.pathname.replace("/dashboard/", "");
     const page = pathname[0].toUpperCase() + pathname.slice(1);
     return (
         <header className="flex justify-between gap-2 p-2 items-center w-full flex-1">
