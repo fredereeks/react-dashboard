@@ -1,4 +1,5 @@
 import React from "react";
+import Home from "./pages/Home";
 
 
 
@@ -7,7 +8,7 @@ function App() {
   
   return (
     <div className="dashboard">
-      <h1>Hello Admin Dashboard</h1>
+      <Home />
     </div>
   );
 }
