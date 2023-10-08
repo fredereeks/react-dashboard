@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    table * {
+        letter-spacing: -.21px;
+        white-space: nowrap;
+    }
+
+    table :is(tr, td, th) {
+        vertical-align: middle;
+        padding: .5rem 1rem;
+    }
+
+}
+
+@layer components {
+    thead tr, tbody tr:not(tr:last-of-type) {
+        @apply border-b border-b-slate-200/50 dark:border-b-slate-500/40;
+    }
+
+    .dark-text {
+        @apply text-slate-600 dark:text-slate-400;
+    }
+
+    .darker-text {
+        @apply text-slate-700 dark:text-slate-400;
+    }
+    .active{
+        @apply text-white bg-gradient-to-bl from-green-500 to-green-400;
+    }
+    .cool{
+        @apply text-white bg-gradient-to-bl from-blue-600 to-blue-500;
+    }
+    .dark{
+        @apply text-white bg-gradient-to-bl from-slate-900 to-slate-800;
+    }
+    .disabled{
+        @apply text-white bg-gradient-to-bl from-red-600 to-red-500;
+    }
+    .dull{
+        @apply text-white bg-gradient-to-bl from-violet-700 to-violet-500;
+    }
+    .pending{
+        @apply text-white bg-gradient-to-bl from-slate-500 to-slate-400;
+    }
+    .tooltip{
+        @apply relative cursor-pointer;
+    }
+}
