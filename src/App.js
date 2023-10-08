@@ -11,28 +11,30 @@ import Admin from "./pages/Admin";
 
 const Layout = () => {
   const [navShow, setNavShow] = React.useState(false)
-  const [darkMode, setDarkMode] = React.useState(localStorage.getItem("travlox__darkmode") ?? false)
+  const [darkMode, setDarkMode] = React.useState(localStorage.getItem("travlox__darkmode") || false)
 
   React.useEffect(() => {
+    console.log({darkMode}, "Works")
     localStorage.setItem("travlox__darkmode", darkMode)
-  },[darkMode])
+    console.log({darkMode})
+  }, [darkMode])
 
   const toggleDarkMode = () => {
     setDarkMode(prev => !prev)
   }
-  
+
   return (
     <main className={`${darkMode ? 'dark' : 'light'}`}>
-    <section className={`bg-slate-50 dark:bg-slate-900 min-h-screen flex py-2 gap-3 w-full`}>
-      <SideBar navShow={navShow} />
-      <div className="flex flex-col flex-1 py-4 sm:px-4 w-[50vw]">
-        <Header handleClick={() => setNavShow(prev => !prev)} darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-        <div className="min-h-[calc(100vh-120px)]">
-          <Outlet />
+      <section className={`bg-slate-50 dark:bg-slate-900 min-h-screen flex py-2 gap-3 w-full`}>
+        <SideBar navShow={navShow} />
+        <div className="flex flex-col flex-1 py-4 sm:px-4 w-[50vw]">
+          <Header handleClick={() => setNavShow(prev => !prev)} darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+          <div className="min-h-[calc(100vh-120px)]">
+            <Outlet />
+          </div>
+          <Footer />
         </div>
-        <Footer />
-      </div>
-    </section>
+      </section>
     </main>
   )
 }
