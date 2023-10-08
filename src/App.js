@@ -13,9 +13,12 @@ const Layout = () => {
   const [navShow, setNavShow] = React.useState(false)
   const [darkMode, setDarkMode] = React.useState(localStorage.getItem("travlox__darkmode") ?? false)
 
+  React.useEffect(() => {
+    localStorage.setItem("travlox__darkmode", darkMode)
+  },[darkMode])
+
   const toggleDarkMode = () => {
     setDarkMode(prev => !prev)
-    localStorage.setItem("travlox__darkmode", darkMode)
   }
   
   return (
