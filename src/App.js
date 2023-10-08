@@ -2,18 +2,29 @@ import React from "react";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import { Header, SideBar, Footer } from "./components";
 
+import Hotel from "./pages/Hotel";
+import Blog from "./pages/Blog";
 import Home from "./pages/Home";
+import User from "./pages/User";
+import Profile from "./pages/Profile";
+import Admin from "./pages/Admin";
 
 const Layout = () => {
   const [navShow, setNavShow] = React.useState(false)
-  const [darkMode, setDarkMode] = React.useState(false)
+  const [darkMode, setDarkMode] = React.useState(localStorage.getItem("travlox__darkmode") ?? false)
+
+  const toggleDarkMode = () => {
+    setDarkMode(prev => !prev)
+    localStorage.setItem("travlox__darkmode", darkMode)
+  }
+  
   return (
     <main className={`${darkMode ? 'dark' : 'light'}`}>
     <section className={`bg-slate-50 dark:bg-slate-900 min-h-screen flex py-2 gap-3 w-full`}>
       <SideBar navShow={navShow} />
       <div className="flex flex-col flex-1 py-4 sm:px-4 w-[50vw]">
-        <Header handleClick={() => setNavShow(prev => !prev)} darkMode={darkMode} toggleDarkMode={() => setDarkMode(prev => !prev)} />
-        <div className="min-h-[calc(100vh-100px)]">
+        <Header handleClick={() => setNavShow(prev => !prev)} darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+        <div className="min-h-[calc(100vh-120px)]">
           <Outlet />
         </div>
         <Footer />
@@ -36,23 +47,23 @@ function App() {
         },
         {
           path: "/dashboard/admins",
-          element: <Home />
+          element: <Admin />
         },
         {
           path: "/dashboard/blogs",
-          element: <Home />
+          element: <Blog />
         },
         {
           path: "/dashboard/hotels",
-          element: <Home />
+          element: <Hotel />
         },
         {
           path: "/dashboard/profile",
-          element: <Home />
+          element: <Profile />
         },
         {
           path: "/dashboard/users",
-          element: <Home />
+          element: <User />
         },
       ]
     }
