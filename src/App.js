@@ -2,21 +2,20 @@ import React from "react";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import { Header, SideBar, Footer } from "./components";
 
-import Hotel from "./pages/Hotel";
+import Admin from "./pages/Admin";
 import Blog from "./pages/Blog";
 import Home from "./pages/Home";
-import User from "./pages/User";
+import Hotel from "./pages/Hotel";
+import Message from "./pages/Message";
 import Profile from "./pages/Profile";
-import Admin from "./pages/Admin";
+import User from "./pages/User";
 
 const Layout = () => {
   const [navShow, setNavShow] = React.useState(false)
   const [darkMode, setDarkMode] = React.useState(localStorage.getItem("travlox__darkmode") || false)
 
   React.useEffect(() => {
-    console.log({darkMode}, "Works")
     localStorage.setItem("travlox__darkmode", darkMode)
-    console.log({darkMode})
   }, [darkMode])
 
   const toggleDarkMode = () => {
@@ -61,6 +60,10 @@ function App() {
         {
           path: "/dashboard/hotels",
           element: <Hotel />
+        },
+        {
+          path: "/dashboard/messages",
+          element: <Message />
         },
         {
           path: "/dashboard/profile",
